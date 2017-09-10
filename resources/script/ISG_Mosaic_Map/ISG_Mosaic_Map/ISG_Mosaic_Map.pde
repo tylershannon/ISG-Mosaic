@@ -4,13 +4,14 @@ int pxWidth, pxNum;
 int x_width = 800;
 
 
-void settings() {
+//void settings() {
   
   //size((x_width*9)/16, x_width);
-  size((displayHeight*9)/16, displayHeight);
-}
+  //size((displayHeight*9)/16, displayHeight);
+//}
 
 void setup() {
+  size(450,800);
   //pxNum = 150;
   //pxWidth = width/pxNum;
 
