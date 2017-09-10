@@ -1,7 +1,6 @@
 PImage portrait;
 PImage test;
 int pxWidth, pxNum;
-int x_width = 800;
 String mode = "web"; //"IDE" "web"
 
 void setup() {
