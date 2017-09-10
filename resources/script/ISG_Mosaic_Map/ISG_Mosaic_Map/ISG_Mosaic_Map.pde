@@ -35,7 +35,7 @@ void setup() {
       noStroke();
       color c = get(x,y);
       fill(c);
-      //fill(#dff442, 200);
+      fill(#dff442, 200);
       rect(x, y, pxWidth, pxWidth);
     }
   }
