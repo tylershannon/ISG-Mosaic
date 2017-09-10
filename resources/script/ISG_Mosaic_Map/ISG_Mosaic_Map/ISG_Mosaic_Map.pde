@@ -5,7 +5,7 @@ int x_width = 800;
 String mode = "web"; //"IDE" "web"
 
 void setup() {
-  size(900,1600);
+  size(844,1500);
   
   if (mode == "web"){
     portrait = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/resources/images/GardnerPortrait-16by9.jpg");
