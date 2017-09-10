@@ -20,7 +20,7 @@ void setup() {
     test = loadImage("./output/result0.jpg");
   }
 // render image to canvas
-  pxNum = 20;
+  pxNum = 8;
   pxWidth = width/pxNum;
   //println(pxNum);
   //println(height/pxWidth);
