@@ -21,7 +21,7 @@ void setup() {
     test = loadImage("./output/result0.jpg");
   }
 // render image to canvas
-  pxNum = 30;
+  pxNum = 20;
   pxWidth = width/pxNum;
   //println(pxNum);
   //println(height/pxWidth);
