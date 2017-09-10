@@ -28,7 +28,7 @@ void setup() {
     }
   }
  **/ 
-  test = loadImage("output/result0.jpg");
+  test = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/output/result0.jpg");
   //blend(test, 0, 0, width, height, 0, 0, width, height, OVERLAY);
   //BLEND, ADD, SUBTRACT, LIGHTEST, DARKEST, DIFFERENCE, 
   //EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN
@@ -37,7 +37,7 @@ void setup() {
 
 void draw() {
   
-  pxNum = (mouseX+12)/6;
+  pxNum = 30;
   pxWidth = width/pxNum;
   //println(pxNum);
   //println(height/pxWidth);
