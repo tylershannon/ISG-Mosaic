@@ -2,6 +2,7 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
+  background: #000;
 
   /* This centers our sketch horizontally. */
   /*justify-content: center;  */
