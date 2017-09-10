@@ -11,7 +11,7 @@ String mode = "web"; //"IDE" "web"
 //}
 
 void setup() {
-  size(563,1000);
+  size(675,1200);
   //pxNum = 150;
   //pxWidth = width/pxNum;
   
