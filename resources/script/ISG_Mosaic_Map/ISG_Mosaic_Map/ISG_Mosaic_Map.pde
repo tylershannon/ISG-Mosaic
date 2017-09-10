@@ -4,12 +4,6 @@ int pxWidth, pxNum;
 int x_width = 800;
 String mode = "web"; //"IDE" "web"
 
-//void settings() {
-
-  //size((x_width*9)/16, x_width);
-  //size((displayHeight*9)/16, displayHeight);
-//}
-
 void setup() {
   size(900,1600);
   
