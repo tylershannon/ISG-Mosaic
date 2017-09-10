@@ -51,7 +51,7 @@ void setup() {
 
 void draw() {
   
-  pxNum = 20;
+  pxNum = 30;
   pxWidth = width/pxNum;
   //println(pxNum);
   //println(height/pxWidth);
