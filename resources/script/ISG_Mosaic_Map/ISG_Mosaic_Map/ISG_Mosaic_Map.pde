@@ -41,7 +41,7 @@ void draw() {
   pxWidth = width/pxNum;
   //println(pxNum);
   //println(height/pxWidth);
-  println(pxNum*(height/pxWidth));
+  //println(pxNum*(height/pxWidth));
 
   image(portrait, 0,0, (height*9)/16, height);
   
