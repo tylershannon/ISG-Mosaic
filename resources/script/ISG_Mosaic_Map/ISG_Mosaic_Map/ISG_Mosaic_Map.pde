@@ -12,8 +12,6 @@ String mode = "web"; //"IDE" "web"
 
 void setup() {
   size(787,1400);
-  //pxNum = 150;
-  //pxWidth = width/pxNum;
   
   if (mode == "web"){
     portrait = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/resources/images/GardnerPortrait-16by9.jpg");
@@ -22,43 +20,21 @@ void setup() {
      portrait = loadImage("./resources/images/GardnerPortrait-16by9.jpg");
   }
   
-  //image(portrait, 0,0, (height*9)/16, height);
-  
-  /**
-  for (int x=0; x<width; x+=pxWidth){
-    for (int y=0; y<height; y+=pxWidth){
-      noStroke();
-      color c = get(x,y);
-      fill(c);
-      //fill(#dff442, 200);
-      rect(x, y, pxWidth, pxWidth);
-    }
-  }
- **/ 
-  
   if (mode == "web") {
     test = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/output/result0.jpg");
   }
   if (mode == "IDE") {
     test = loadImage("./output/result0.jpg");
   }
-  
-  //blend(test, 0, 0, width, height, 0, 0, width, height, OVERLAY);
-  //BLEND, ADD, SUBTRACT, LIGHTEST, DARKEST, DIFFERENCE, 
-  //EXCLUSION, MULTIPLY, SCREEN, OVERLAY, HARD_LIGHT, SOFT_LIGHT, DODGE, BURN
-
-}
-
-void draw() {
-  
+// render image to canvas
   pxNum = 30;
   pxWidth = width/pxNum;
   //println(pxNum);
   //println(height/pxWidth);
   //println(pxNum*(height/pxWidth));
-
-  image(portrait, 0,0, (height*9)/16, height);
   
+  image(portrait, 0,0, (height*9)/16, height);
+
   for (int x=0; x<width; x+=pxWidth){
     for (int y=0; y<height; y+=pxWidth){
       noStroke();
@@ -68,7 +44,11 @@ void draw() {
       rect(x, y, pxWidth, pxWidth);
     }
   }
-  
+
   blend(test, 0, 0, width, height, 0, 0, width, height, OVERLAY);
 
+}
+
+void draw() {
+  noLoop();
 }
