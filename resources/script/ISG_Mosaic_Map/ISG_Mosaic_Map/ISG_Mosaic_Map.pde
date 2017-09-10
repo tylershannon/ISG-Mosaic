@@ -16,7 +16,7 @@ void setup() {
   //pxNum = 150;
   //pxWidth = width/pxNum;
 
-  portrait = loadImage("resources/images/GardnerPortrait-16by9.jpg");
+  portrait = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/resources/images/GardnerPortrait-16by9.jpg");
   //image(portrait, 0,0, (height*9)/16, height);
   /**
   for (int x=0; x<width; x+=pxWidth){
