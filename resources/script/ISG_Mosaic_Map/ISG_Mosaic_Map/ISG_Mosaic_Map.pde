@@ -12,13 +12,15 @@ void setup() {
   if (mode == "IDE") {
      portrait = loadImage("./resources/images/GardnerPortrait-16by9.jpg");
   }
-  
+  /**
   if (mode == "web") {
     test = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/output/result0.jpg");
   }
   if (mode == "IDE") {
     test = loadImage("./output/result0.jpg");
   }
+  **/
+  
 // render image to canvas
   pxNum = 8;
   pxWidth = width/pxNum;
