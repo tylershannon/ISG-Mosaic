@@ -11,7 +11,7 @@ String mode = "web"; //"IDE" "web"
 //}
 
 void setup() {
-  size(787,1400);
+  size(900,1600);
   
   if (mode == "web"){
     portrait = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/resources/images/GardnerPortrait-16by9.jpg");
