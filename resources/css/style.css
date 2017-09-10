@@ -4,13 +4,13 @@ body {
   flex-direction: column;
 
   /* This centers our sketch horizontally. */
-  justify-content: center;
+  /*justify-content: center;  */
 
   /* This centers our sketch vertically. */
-  /*align-items: center;*/
+  align-items: center;
 }
 
 .canvas {
   display: block;
-  /*margin-top: 0px;*/
+  margin-top: 20px;
 }
