@@ -39,7 +39,7 @@ void setup() {
     }
   }
 
-  blend(test, 0, 0, width, height, 0, 0, width, height, OVERLAY);
+  //blend(test, 0, 0, width, height, 0, 0, width, height, OVERLAY);
 
 }
 
