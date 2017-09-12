@@ -2,9 +2,9 @@ PImage portrait;
 PImage test;
 int pxWidth, pxNum, offset, x_counter, y_counter, image_loop;
 int[] placement_x, placement_y;
-String mode = "web"; //"IDE" "web"
+String mode = "IDE"; //"IDE" "web"
 int currentFrame=0;
-int numFrames = 986;
+int numFrames = 700;
 PImage[] images = new PImage[numFrames];
 JSONObject instagram;
 JSONArray post;
@@ -14,12 +14,12 @@ String url1, url_proxy;
 
 
 void settings () {
-  //size((displayHeight*9)/16, displayHeight);
+  size((displayHeight*9)/16, displayHeight);
 }
 
 void setup() {
-  size(787,1400);
-  pxNum = 25;
+  //size(787,1400);
+  pxNum = 20;
   pxWidth = width/pxNum;
 
   if (mode == "web"){

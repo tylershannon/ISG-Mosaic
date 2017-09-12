@@ -4,18 +4,19 @@
     <meta charset="utf-8">
     <title>ISGMosaic</title>
     <link href="./resources/css/style.css" type="text/css" rel="stylesheet">
-    <script src="//d3js.org/d3.v3.min.js" type="text/javascript"></script>
+    <script src="https://d3js.org/d3.v4.js" type="text/javascript"></script>
     <!--<script src="./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/processing.js" type="text/javascript"></script>-->
   </head>
   <body>
     <script>
-      var w = 480,
-      var h = 500;
+      var width = 800; //window.innerWidth;
+      var height = (width*16/9);
+
       var svg = d3.select("body")
                 .append("svg")
-                .attr("width", 200)
-                .attr("height", 100)
-                .style("border", "1px solid white");
+                .attr("id", "portrait")
+                .attr("width", width)
+                .attr("height", height);
     </script>
     <!--<div class="canvas">
       <canvas data-processing-sources=

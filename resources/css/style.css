@@ -2,7 +2,7 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  background: black;
+  /*background: black;*/
 
   /* This centers our sketch horizontally. */
   /*justify-content: center;  */
@@ -14,4 +14,8 @@ body {
 .canvas {
   display: block;
   margin-top: 20px;
+}
+
+#portrait {
+  background-image: url("./resources/images/portrait/portrait_cropped_16_9.jpg");
 }
