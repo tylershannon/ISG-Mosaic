@@ -11,12 +11,16 @@
     <script>
       var width = 800; //window.innerWidth;
       var height = (width*16/9);
+      var sampleNumber = 20;
+      var sampleSize = width/sampleNumber;
 
       var svg = d3.select("body")
                 .append("svg")
                 .attr("id", "portrait")
                 .attr("width", width)
                 .attr("height", height);
+
+                
     </script>
     <!--<div class="canvas">
       <canvas data-processing-sources=
