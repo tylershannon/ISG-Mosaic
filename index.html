@@ -37,7 +37,10 @@
         }
         return data;
       }
-
+      //load color data
+      d3.csv("./resources/colorData/colorData.csv", function(data) {
+        console.log(data);
+      });
       //setup main document variables
       var w = window.innerWidth;
       var h = (w*16/9);

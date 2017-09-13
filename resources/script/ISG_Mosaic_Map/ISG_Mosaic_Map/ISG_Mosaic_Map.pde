@@ -20,7 +20,7 @@ void settings () {
 
 void setup() {
   //size(787,1400);
-  pxNum = 20;
+  pxNum = 40;
   pxWidth = width/pxNum;
 
   if (mode == "web"){
@@ -33,7 +33,7 @@ void setup() {
 // RENDER PIXEL COLOR TO CANVAS
   
   image(portrait, 0,0, width, height);
-  
+  int count = 0;
   for (int x=0; x<width; x+=pxWidth){
     for (int y=0; y<height; y+=pxWidth){
       noStroke();
@@ -41,6 +41,9 @@ void setup() {
       fill(c);
       //fill(#dff442, 200);
       rect(x, y, pxWidth, pxWidth);
+      //int[] color_values = new int[];
+      println(count);
+      count += 1;
     }
   }
   
