@@ -23,20 +23,19 @@ void setup() {
   pxWidth = width/pxNum;
 
   if (mode == "web"){
-    portrait = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/resources/images/GardnerPortrait-16by9.jpg");
+    portrait = loadImage("./resources/images/portrait/portrait_cropped_16_9.jpg");
   }
   if (mode == "IDE") {
-     portrait = loadImage("./resources/images/GardnerPortrait-16by9.jpg");
+     portrait = loadImage("./resources/images/portrait_cropped_16_9.jpg");
   }
   
 // RENDER PIXEL COLOR TO CANVAS
-  
   image(portrait, 0,0, width, height);
   
   for (int x=0; x<width; x+=pxWidth){
     for (int y=0; y<height; y+=pxWidth){
       noStroke();
-      color c = get(x,y);
+      color c = portrait.get(x,y);
       fill(c);
       //fill(#dff442, 200);
       rect(x, y, pxWidth, pxWidth);
@@ -85,7 +84,13 @@ void setup() {
 void draw() {
   
   //accessAPI(api, numFrames);
-  //noLoop();
+  int newImage_index = int(random(0,700));
+  int newImage_xLoc = pxWidth*int(random(0, pxNum));
+  int newImage_yLoc = pxWidth*int(random(0, (height/pxWidth)));
+  color c = portrait.get(newImage_xLoc, newImage_yLoc);
+  tint(c);
+  image(images[newImage_index], newImage_xLoc, newImage_yLoc, pxWidth, pxWidth);
+  
 }
 
 

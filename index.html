@@ -2,30 +2,79 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>ISGMosaic</title>
+    <title>ISG Mosaic</title>
     <link href="./resources/css/style.css" type="text/css" rel="stylesheet">
     <script src="https://d3js.org/d3.v4.js" type="text/javascript"></script>
     <!--<script src="./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/processing.js" type="text/javascript"></script>-->
   </head>
+  <!-- <canvas id="myCanvas"></canvas> -->
+  <!--<img id="portrait" src"./resources/images/portrait/portrait_cropped_16_9.jpg"> -->
   <body>
     <script>
-      var width = 800; //window.innerWidth;
-      var height = (width*16/9);
-      var sampleNumber = 20;
-      var sampleSize = width/sampleNumber;
+      //define function for building sample grid
+      function gridData() {
+        var data = new Array();
+        var xpos = 0;
+        var ypos = 0;
+        var width = sampleSize;
+        var height = sampleSize;
 
+        //iterate for rows
+        for (var row = 0; row < h/sampleSize; row++){
+          data.push( new Array() );
+          // iterate for cells/columns inside rows
+          for (var column = 0; column < sampleNumber; column++) {
+            data[row].push({
+              x: xpos,
+              y: ypos,
+              width: width,
+              height: height
+            })
+            xpos += width;
+          }
+          xpos = 0;
+          ypos += height;
+        }
+        return data;
+      }
+
+      //setup main document variables
+      var w = window.innerWidth;
+      var h = (w*16/9);
+      var sampleNumber = 40;
+      var sampleSize = Math.ceil(w/sampleNumber);
+
+      //load image for reference
+      var portrait_img = new Image();
+      portrait_img.src = './resources/images/portrait/portrait_cropped_16_9.jpg';
+
+      //create array of data for image "pixel" positioning
+      var gridData = gridData();
+
+      //select body element
       var svg = d3.select("body")
                 .append("svg")
-                .attr("id", "portrait")
-                .attr("width", width)
-                .attr("height", height);
+                .attr("id", "mosaic")
+                .attr("width", w)
+                .attr("height", h);
 
-                
+      var row = svg.selectAll(".row")
+                .data(gridData)
+                .enter().append("g")
+                .attr("class", "row");
+
+      var column = row.selectAll(".square")
+                    .data(function(d) {return d;})
+                    .enter().append("rect")
+                    .attr("class", "square")
+                    .attr("x", function(d) { return d.x; })
+                    .attr("y", function(d) { return d.y; })
+                    .attr("width", sampleSize)
+                    .attr("height", sampleSize)
+                    .style("stroke", "white")
+                    //.style("stroke-weight", 1)
+                    .style("opacity", .2);
+
     </script>
-    <!--<div class="canvas">
-      <canvas data-processing-sources=
-      "./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/ISG_Mosaic_Map.pde">
-    </canvas>
-  </div>-->
   </body>
 </html>
