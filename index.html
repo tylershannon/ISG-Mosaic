@@ -37,15 +37,25 @@
         }
         return data;
       }
-      //load color data
-      d3.csv("./resources/colorData/colorData.csv", function(data) {
-        console.log(data);
-      });
+
       //setup main document variables
       var w = window.innerWidth;
       var h = (w*16/9);
-      var sampleNumber = 40;
+      var sampleNumber =40;
       var sampleSize = Math.ceil(w/sampleNumber);
+
+
+      //load color data
+      var img = new Image("./resources/images/portrait/portrait_cropped_16_9.jpg");
+      var imgWidth = img.width || img.naturalWidth;
+      var imgHeight = img.height || img.naturalHeight;
+      var canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+      var pixelData = canvas.getContext('2d').getImageData(0, 0, imgWidth, imgHeight).data;
+      console.log(pixelData);
+
 
       //load image for reference
       var portrait_img = new Image();

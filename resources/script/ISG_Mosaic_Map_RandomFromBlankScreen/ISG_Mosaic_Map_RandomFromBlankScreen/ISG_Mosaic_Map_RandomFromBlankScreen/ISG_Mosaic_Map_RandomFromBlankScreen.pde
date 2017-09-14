@@ -1,18 +1,19 @@
+// IMAGE BUILD FROM BLANK SCREEN
+
 PImage portrait;
 PImage test;
-int pxWidth, pxNum, offset, x_counter, y_counter, image_loop;
+int pxWidth, offset, x_counter, y_counter, image_loop;
 int[] placement_x, placement_y;
 String mode = "IDE"; //"IDE" "web"
 int currentFrame=0;
 int numFrames = 700;
 PImage[] images = new PImage[numFrames];
-int[] portrait_value = new int[numFrames];
 JSONObject instagram;
 JSONArray post;
 PImage img_get, img_proxy, img_render;
 String api = "https://app.dialogfeed.com/en/snippet/isg-display.json?api_key=e2e57b8f7cec6a72dcff7db8ad977dea&since_id=10000";
 String url1, url_proxy;
-
+float pxNum;
 
 void settings () {
   size((displayHeight*9)/16, displayHeight);
@@ -20,36 +21,21 @@ void settings () {
 
 void setup() {
   //size(787,1400);
-  pxNum = 80;
-  pxWidth = width/pxNum;
+  background(#393f93);
 
+  pxNum = 20.0;
+  pxWidth = ceil(width/pxNum);
+  
   if (mode == "web"){
-    portrait = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/resources/images/GardnerPortrait-16by9.jpg-cropped");
+    portrait = loadImage("./resources/images/portrait/portrait_cropped_16_9.jpg");
   }
   if (mode == "IDE") {
      portrait = loadImage("./resources/images/portrait_cropped_16_9.jpg");
   }
   
-// RENDER PIXEL COLOR TO CANVAS
-  image(portrait, 0,0, width, height);
-  
-  //int count = 0;
-  
-  for (int x=0; x<width; x+=pxWidth){
-    for (int y=0; y<height; y+=pxWidth){
-      noStroke();
-      color c = get(x,y);
-      fill(c);
-      //fill(#dff442, 200);
-      rect(x, y, pxWidth, pxWidth);
-      //println(count+","+c);
-      //count += 1;
-    }
-  }
-  
 // CREATE ARRAY OF COORDINATES FOR PLACEMENT
-  placement_x = new int[width/pxWidth];
-  placement_y = new int[height/pxWidth];
+  placement_x = new int[ceil(width/pxNum)];
+  placement_y = new int[ceil(height/pxWidth)];
   
   for (int i = 1; i < (placement_x.length+1); i++) {
     placement_x[i-1] = i;
@@ -64,13 +50,10 @@ void setup() {
   x_counter = 0;
   y_counter = 0;
   image_loop = 0;  
-   /*
+  
   for (int i=0; i < numFrames; i++) {
     String imageName = "output/result"+i+".jpg";
     images[i] = loadImage(imageName);
-    color c = get(pxWidth*x_counter, pxWidth*y_counter);
-    tint(c, 100);
-    image(images[image_loop], pxWidth*x_counter, pxWidth*y_counter, pxWidth, pxWidth);
 
     if (x_counter < placement_x.length-1) {
       x_counter +=1;
@@ -84,32 +67,21 @@ void setup() {
       image_loop = 0;
     }
   }
- /*
-  for (int i=0; i<numFrames; i++) {
-    color c = get(pxWidth*x_counter, pxWidth*y_counter);
-    portrait_value[i] = c;
-      
-    if (x_counter < placement_x.length-1) {
-      x_counter +=1;
-    } else {
-      x_counter = 0;
-      y_counter +=1;
-    }
-    //println(portrait_value[i]);
-  }*/
 }
 
 void draw() {
-  
+ 
   //accessAPI(api, numFrames);
-  /*
-  int newImage_index = int(random(0,numFrames));
+  
+  int newImage_index = int(random(0,700));
   int newImage_xLoc = pxWidth*int(random(0, pxNum));
   int newImage_yLoc = pxWidth*int(random(0, (height/pxWidth)));
   color c = portrait.get(newImage_xLoc, newImage_yLoc);
   tint(c);
   image(images[newImage_index], newImage_xLoc, newImage_yLoc, pxWidth, pxWidth);
-  */
+  
+  delay(mouseX);
+  
 }
 
 

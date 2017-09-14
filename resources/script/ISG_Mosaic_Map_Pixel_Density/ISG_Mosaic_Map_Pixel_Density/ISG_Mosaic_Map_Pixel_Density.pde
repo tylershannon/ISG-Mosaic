@@ -1,3 +1,5 @@
+//IMAGE PIXEL DENSITY TEST
+
 PImage portrait;
 PImage test;
 int pxWidth, pxNum, offset, x_counter, y_counter, image_loop;
@@ -20,7 +22,7 @@ void settings () {
 
 void setup() {
   //size(787,1400);
-  pxNum = 80;
+  pxNum = 40;
   pxWidth = width/pxNum;
 
   if (mode == "web"){

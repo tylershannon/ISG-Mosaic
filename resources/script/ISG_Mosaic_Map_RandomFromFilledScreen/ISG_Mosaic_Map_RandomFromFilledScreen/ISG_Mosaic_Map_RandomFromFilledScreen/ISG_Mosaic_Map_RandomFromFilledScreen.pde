@@ -1,3 +1,5 @@
+//BUILD RANDOM FROM FILLED SCREEN
+
 PImage portrait;
 PImage test;
 int pxWidth, pxNum, offset, x_counter, y_counter, image_loop;
@@ -6,7 +8,6 @@ String mode = "IDE"; //"IDE" "web"
 int currentFrame=0;
 int numFrames = 700;
 PImage[] images = new PImage[numFrames];
-int[] portrait_value = new int[numFrames];
 JSONObject instagram;
 JSONArray post;
 PImage img_get, img_proxy, img_render;
@@ -20,11 +21,11 @@ void settings () {
 
 void setup() {
   //size(787,1400);
-  pxNum = 80;
+  pxNum = 20;
   pxWidth = width/pxNum;
 
   if (mode == "web"){
-    portrait = loadImage("./resources/script/ISG_Mosaic_Map/ISG_Mosaic_Map/resources/images/GardnerPortrait-16by9.jpg-cropped");
+    portrait = loadImage("./resources/images/portrait/portrait_cropped_16_9.jpg");
   }
   if (mode == "IDE") {
      portrait = loadImage("./resources/images/portrait_cropped_16_9.jpg");
@@ -33,17 +34,13 @@ void setup() {
 // RENDER PIXEL COLOR TO CANVAS
   image(portrait, 0,0, width, height);
   
-  //int count = 0;
-  
   for (int x=0; x<width; x+=pxWidth){
     for (int y=0; y<height; y+=pxWidth){
       noStroke();
-      color c = get(x,y);
+      color c = portrait.get(x,y);
       fill(c);
       //fill(#dff442, 200);
       rect(x, y, pxWidth, pxWidth);
-      //println(count+","+c);
-      //count += 1;
     }
   }
   
@@ -64,12 +61,12 @@ void setup() {
   x_counter = 0;
   y_counter = 0;
   image_loop = 0;  
-   /*
+  
   for (int i=0; i < numFrames; i++) {
     String imageName = "output/result"+i+".jpg";
     images[i] = loadImage(imageName);
     color c = get(pxWidth*x_counter, pxWidth*y_counter);
-    tint(c, 100);
+    tint(c);
     image(images[image_loop], pxWidth*x_counter, pxWidth*y_counter, pxWidth, pxWidth);
 
     if (x_counter < placement_x.length-1) {
@@ -84,32 +81,19 @@ void setup() {
       image_loop = 0;
     }
   }
- /*
-  for (int i=0; i<numFrames; i++) {
-    color c = get(pxWidth*x_counter, pxWidth*y_counter);
-    portrait_value[i] = c;
-      
-    if (x_counter < placement_x.length-1) {
-      x_counter +=1;
-    } else {
-      x_counter = 0;
-      y_counter +=1;
-    }
-    //println(portrait_value[i]);
-  }*/
 }
 
 void draw() {
   
   //accessAPI(api, numFrames);
-  /*
-  int newImage_index = int(random(0,numFrames));
+  
+  int newImage_index = int(random(0,700));
   int newImage_xLoc = pxWidth*int(random(0, pxNum));
   int newImage_yLoc = pxWidth*int(random(0, (height/pxWidth)));
   color c = portrait.get(newImage_xLoc, newImage_yLoc);
   tint(c);
   image(images[newImage_index], newImage_xLoc, newImage_yLoc, pxWidth, pxWidth);
-  */
+  
 }
 
 
