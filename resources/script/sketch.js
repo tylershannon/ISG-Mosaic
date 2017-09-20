@@ -9,7 +9,7 @@ function setup() {
   createCanvas((windowHeight*9)/16, windowHeight);
   background('#393f93');
   image(portrait, 0,0, (windowHeight*9)/16, windowHeight);
-  println(1);
+  console.log(1);
 
 }
 
